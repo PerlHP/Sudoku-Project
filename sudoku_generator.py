@@ -270,8 +270,17 @@ class SudokuGenerator:
 	Return: None
     '''
     def remove_cells(self):
-        pass
-
+        coordinates = []
+        twod_list = []
+        for i in range(9):
+            for j in range(9):
+                coordinates.append([i, j])
+        random_index = random.sample(range(82), self.removed_cells)
+        for i in random_index:
+            twod_list.append(coordinates[i])
+        for i in twod_list:
+            self.board[i[0]][i[1]] = 0
+            
 '''
 DO NOT CHANGE
 Provided for students
